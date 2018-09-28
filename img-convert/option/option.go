@@ -7,7 +7,7 @@ import (
 	"github.com/kzkick2nd/golang-sandbox/img-convert/encoder"
 )
 
-// TODO 各プロパティも文字列ではなく構造体にしよう
+// TODO 各プロパティも文字列ではなく構造体に
 
 type Args struct {
 	Dir     string
@@ -18,13 +18,13 @@ type Args struct {
 func Parse(s []string) (Args, error) {
 
 	f := flag.NewFlagSet(s[0], flag.ExitOnError)
-	from := f.String("from", "jpg", "convert from.")
-	to := f.String("to", "png", "convert to.")
+	from := f.String("i", "jpg", "convert from (jpg|png)")
+	to := f.String("o", "png", "convert to (jpg|png)")
 	f.Parse(s[1:])
-	args := f.Args()
+	dir := f.Arg(0)
 
 	return Args{
-		Dir:     validDir(args[0]),
+		Dir:     validDir(dir),
 		Decoder: validDecoder(from),
 		Encoder: validEncoder(to),
 	}, nil
