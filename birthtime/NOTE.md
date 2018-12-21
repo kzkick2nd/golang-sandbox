@@ -1,0 +1,2 @@
+- [Mac の Go で birth time を取得する - Qiita](https://qiita.com/hiokidaichi/items/26890e7da566cb3a4121)
+- [hioki-daichi/birthtime-rename: birthtime-rename is a command that can rename files to the birth time of the file.](https://github.com/hioki-daichi/birthtime-rename)
