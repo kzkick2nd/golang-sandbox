@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// とにかくcontroller層にロジックを書くけどとにかく長く見通し悪くなる
+// 関数ごとに切り分けても見通しには限界がある、小規模向け
 func Handler(w http.ResponseWriter, r *http.Request) {
 	n := r.FormValuse("name")
 	if n == "" {
@@ -13,6 +13,14 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := InsertUser(n); err != nil {
+		fmt.Fprint(w, "name error")
+	}
+
+	fmt.Fprint(w, "success")
+}
+
+func InsertUser(name string) error {
 	conn := db.NewConnection()
 	conn.BeginTransaction()
 
