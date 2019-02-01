@@ -1,0 +1,4 @@
+- [【はじめてのGo言語】Go言語でアプリケーションを作ってみよう 〜Webサーバー編〜 | 東京上野のWeb制作会社LIG](https://liginc.co.jp/333868)
+- [[Go] net/httpパッケージでWebサーバー（handlerの書き方、静的ファイル配信、Basic認証、など） - YoheiM .NET](https://www.yoheim.net/blog.php?q=20170403)
+- [url - The Go Programming Language](https://golang.org/pkg/net/url/#URL.Query)
+- example いいね [url - The Go Programming Language](https://golang.org/pkg/net/url/)
