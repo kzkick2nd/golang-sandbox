@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -16,6 +17,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	http.Handle("/assets/", http.FileServer(http.Dir("./")))
+
 	http.HandleFunc("/hello", hello)
 
 	http.HandleFunc("/world", func(w http.ResponseWriter, r *http.Request) {
@@ -25,5 +29,5 @@ func main() {
 	f := fuga(1)
 	http.Handle("/", &f)
 
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
