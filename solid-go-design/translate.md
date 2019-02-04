@@ -33,3 +33,30 @@ Verbose. Is it just exhausting to use the code? When you look at it, can you eve
 Are these positive sounding words? Would you be pleased to see these words used in a review of your code?
 
 Probably not.
+
+## 悪いコードの性質
+コードレビューで悪いコードだと思う特徴はなんでしょう？
+
+硬すぎる
+ガチガチなコード。変更を加える事が困難な程に型とパラメーターが強引で堅苦しかったりします。
+
+壊れやすい
+フラジャイルなコード。
+小さな変更が全体に波及し甚大な被害を引き起こします。
+
+移動できない
+リファクターが難しいコード。
+インポート箇所から遠すぎるコード
+FIXME:
+
+複雑すぎ
+過剰に設計されたコードのためのコードがある。
+
+くどい
+使おうとして疲れてしまうコード。何しているのか説明できないような奴です。
+
+これらの言葉を何か良い意味への言い換えができるでしょうか？
+あなたのコードがレビューでこの様な表現をされて嬉しいと思いますか？
+
+おそらく違うでしょう。
+
