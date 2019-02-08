@@ -60,3 +60,50 @@ FIXME:
 
 おそらく違うでしょう。
 
+## Good design
+But this is an improvement, now we can say things like “I don’t like this because it’s too hard to modify”, or “I don’t like this because i cannot tell what the code is trying to do”, but what about leading with the positive?
+
+Wouldn’t it be great if there were some ways to describe the properties of good design, not just bad design, and to be able to do so in objective terms?
+
+TODO: but what about leading with the positive?
+
+しかしこれは進歩です。これで私たちは「このコードは変更しづらすぎるから好きではない」もしくは「このコードが何をしようとしているか分からないので良いと思わない」といった表現ができるようになります。しかしこれは何を意味するのでしょう？
+
+もし悪いデザインだけではなく、良いデザインの特性を客観的な用語で説明できる様になれば最高じゃないでしょうか？
+
+## SOLID
+In 2002 Robert Martin published his book, Agile Software Development, Principles, Patterns, and Practices. In it he described five principles of reusable software design, which he called the SOLID principles, after the first letters in their names.
+
+Single Responsibility Principle
+Open / Closed Principle
+Liskov Substitution Principle
+Interface Segregation Principle
+Dependency Inversion Principle
+This book is a little dated, the languages that it talks about are the ones in use more than a decade ago. But, perhaps there are some aspects of the SOLID principles that may give us a clue about how to talk about a well designed Go programs.
+
+So this is what I want to spend some time discussing with you this morning.
+
+2002年。ロバート・マーティンはアジャイルソフトウェア開発・原則・実践パターンを発表しました。その中で、再利用可能なソフトウェア設計の5原則を説明し、イニシャルをとってSOLID原則と名付けました。
+
+- 単一責任原則
+- オープン・クローズド原則
+- リスコフ置換の原則
+- インターフェース分離の原則
+- 依存関係逆転の原則
+
+この本は少し時代遅れです。語られている言語は10年前に使われていたものです。しかし、おそらく SOLID 原則はよく設計された Go プログラムを説明する方法についての手がかりとなる側面があります。
+
+これがこの朝に私が皆さんにお伝えする時間を頂きたい話しです。
+
+## Single Responsibility Principle
+The first principle of SOLID, the S, is the single responsibility principle.
+
+    A class should have one, and only one, reason to change.
+    –Robert C Martin
+
+Now Go obviously doesn’t have classes—instead we have the far more powerful notion of composition—but if you can look past the use of the word class, I think there is some value here.
+
+Why is it important that a piece of code should have only one reason for change? Well, as distressing as the idea that your own code may change, it is far more distressing to discover that code your code depends on is changing under your feet. And when your code does have to change, it should do so in response to a direct stimuli, it shouldn’t be a victim of collateral damage.
+
+So code that has a single responsibility therefore has the fewest reasons to change.
+
