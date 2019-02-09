@@ -107,3 +107,52 @@ Why is it important that a piece of code should have only one reason for change?
 
 So code that has a single responsibility therefore has the fewest reasons to change.
 
+TODO: notion
+TODO: distressing
+TODO: stimuli
+
+
+SOLID の最初の S は単一責任原則です。
+
+    Class を変更する理由は一つ、ただ一つであるべきだ。
+
+Go には一切の Class 機能がありません。代わりに遥かに強力な Composition という概念があります。しかし Class という言葉の使用に目をつむれば、そこには価値ある内容があります。
+
+1つのコードの変更理由が1つしかない事がなぜ重要なのでしょう？ 自分の書いたコードが変更されるだろう事を考えるのは面倒な事ですが、あなたのコードが依存するコードが見えない場所で変化している事を見つけるのは、それより遥かに面倒な事です。
+コードは直接的な要因によって変更されるべきであり、副次的な被害によって行うべきではありません。
+
+単一の責任をもつコードは、したがってもっとも変更する理由がすくないコードになります。
+
+## Coupling & Cohesion
+Two words that describe how easy or difficult it is to change a piece of software are coupling and cohesion.
+
+Coupling is simply a word that describes two things changing together–a movement in one induces a movement in another.
+
+A related, but separate, notion is the idea of cohesion, a force of mutual attraction.
+
+In the context of software, cohesion is the property of describing pieces of code are naturally attracted to one another.
+
+To describe the units of coupling and cohesion in a Go program, we might talk about functions and methods, as is very common when discussing SRP but I believe it starts with Go’s package model.
+
+TODO: induces
+TODO: mutual
+TODO: attraction
+
+結合と凝縮
+ソフトウェアを変更するのがどれほど簡単、もしくは難しいかを表すの表現が2つあります。結合と結束です。
+
+結合は簡単な表現です。二つの事が同時に変化する事を表し、一方が動けばもう一方を動かします。
+
+結束はこれに関連はしているが別の、相互に引きよせる力の概念です。
+
+ソフトウェアの文脈では、結束は自然と一方を引き寄せてしまう性質のコードを表現する語彙です。
+
+Go プログラムでの結合と結束の単位を説明するのに、単一責任の原則の解説で一般的な、関数とメソッドの説明を使う事も出来ますが、Goではパッケージモデルの説明から始めるのがよいと考えています。
+
+## Package names
+In Go, all code lives inside a package, and a well designed package starts with its name. A package’s name is both a description of its purpose, and a name space prefix. Some examples of good packages from the Go standard library might be:
+
+net/http, which provides http clients and servers.
+os/exec, which runs external commands.
+encoding/json, which implements encoding and decoding of JSON documents.
+When you use another package’s symbols inside your own this is accomplished by the `import` declaration, which establishes a source level coupling between two packages. They now know about each other.
