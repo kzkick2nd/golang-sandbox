@@ -12,8 +12,14 @@ import (
 // 1. json を返す OK
 // 2. パラメーターを受け取る OK
 // 3. テスト方法と設計
+// https://golang.org/pkg/net/http/httptest/
+// 4. Handler インターフェース [http - The Go Programming Language](https://golang.org/pkg/net/http/#Handler)
+// 5. アクセスログ？
+// 6. ダウンタイム？
 
 // JSON 作り方
+// フォーマット ベストプラクティス
+// ステータス ベストプラクティス
 
 func main() {
 
