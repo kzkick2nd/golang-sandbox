@@ -155,4 +155,14 @@ In Go, all code lives inside a package, and a well designed package starts with 
 net/http, which provides http clients and servers.
 os/exec, which runs external commands.
 encoding/json, which implements encoding and decoding of JSON documents.
+
 When you use another package’s symbols inside your own this is accomplished by the `import` declaration, which establishes a source level coupling between two packages. They now know about each other.
+
+パッケージ名
+Go では全てのコードがパッケージに収まっており、よく設計されたパッケージはそのパッケージ名から始まっています。パッケージ名はその用途の説明と、名前空間の接頭辞の両方を担っています。Go 標準ライブラリからよく設計されたパッケージの例を選んでみましょう。
+
+net/http http クライアントとサーバーを提供します。
+os/exec 外部コマンドを実行します。
+encoding/json json のエンコードと JSON ドキュメントのデコード実装です。
+
+コード中で別のパッケージのシンボルを使う場合、import 定義をすることで2パッケージ間のソースレベルの結合が行われ、利用可能になります。そしてパッケージたちはお互いのことをしっている状態となります。
