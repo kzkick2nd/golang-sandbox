@@ -190,3 +190,13 @@ private パッケージは何をするでしょう？ 何か見てはいけな�
 common パッケージは共犯者のように utils パッケージなどの別の相方の近くでみられます。
 
 この様なパッケージを集めると雑多な廃棄物処理場になります。またこういったパッケージは多くの責任を内包するので意味のない変更が頻繁に発生します。
+
+## Go’s UNIX philosophy
+In my view, no discussion about decoupled design would be complete without mentioning Doug McIlroy’s Unix philosophy; small, sharp tools which combine to solve larger tasks, oftentimes tasks which were not envisioned by the original authors.
+
+I think that Go packages embody the spirit of the UNIX philosophy. In effect each Go package is itself a small Go program, a single unit of change, with a single responsibility.
+
+私の見解ではダグラス・マキルロイのUNIX哲学に触れずに分離設計について議論はできないでしょう。小さくするどい道具は組み合わせで、その原作者が想定しえなかった大きな課題を解決します。
+
+私は Go パッケージがUNIX哲学の精神を体現していると考えます。各 Go パッケージは小さな Go プログラムで、単一の責任と変更をもちます。
+
