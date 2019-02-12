@@ -166,3 +166,27 @@ os/exec 外部コマンドを実行します。
 encoding/json json のエンコードと JSON ドキュメントのデコード実装です。
 
 コード中で別のパッケージのシンボルを使う場合、import 定義をすることで2パッケージ間のソースレベルの結合が行われ、利用可能になります。そしてパッケージたちはお互いのことをしっている状態となります。
+
+## Bad package names
+This focus on names is not just pedantry. A poorly named package misses the opportunity to enumerate its purpose, if indeed it ever had one.
+
+What does package server provide? … well a server, hopefully, but which protocol?
+
+What does package private provide? Things that I should not see? Should it have any public symbols?
+
+And package common, just like its partner in crime, package utils, is often found close by these other offenders.
+
+Catch all packages like these become a dumping ground for miscellany, and because they have many responsibilities they change frequently and without cause.
+
+TODO: pedantry
+TODO: miscellany
+
+杓子定規に名前をつけろということではありません。
+不完全なパッケージ名はたとえその用途が一つだったとしても、用途を列挙する機会を失います。
+
+server パッケージは何をするでしょう？ 何かのプロトコルのサーバーかな？
+private パッケージは何をするでしょう？ 何か見てはいけないものがあるのか、公開するものがあるのかな？
+
+common パッケージは共犯者のように utils パッケージなどの別の相方の近くでみられます。
+
+この様なパッケージを集めると雑多な廃棄物処理場になります。またこういったパッケージは多くの責任を内包するので意味のない変更が頻繁に発生します。
