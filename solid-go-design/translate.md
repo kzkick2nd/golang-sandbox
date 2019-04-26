@@ -190,3 +190,61 @@ private パッケージは何をするでしょう？ 何か見てはいけな�
 common パッケージは共犯者のように utils パッケージなどの別の相方の近くでみられます。
 
 この様なパッケージを集めると雑多な廃棄物処理場になります。またこういったパッケージは多くの責任を内包するので意味のない変更が頻繁に発生します。
+
+## Go’s UNIX philosophy
+In my view, no discussion about decoupled design would be complete without mentioning Doug McIlroy’s Unix philosophy; small, sharp tools which combine to solve larger tasks, oftentimes tasks which were not envisioned by the original authors.
+
+I think that Go packages embody the spirit of the UNIX philosophy. In effect each Go package is itself a small Go program, a single unit of change, with a single responsibility.
+
+私の見解ではダグラス・マキルロイのUNIX哲学に触れずに分離設計について議論はできないでしょう。小さくするどい道具は組み合わせで、その原作者が想定しえなかった大きな課題を解決します。
+
+私は Go パッケージがUNIX哲学の精神を体現していると考えます。各 Go パッケージは小さな Go プログラムで、単一の責任と変更をもちます。
+
+## Open / Closed Principle
+The second principle, the O, is the open closed principle by Bertrand Meyer who in 1988 wrote:
+
+    Software entities should be open for extension, but closed for modification.
+    –Bertrand Meyer, Object-Oriented Software Construction
+
+How does this advice apply to a language written 21 years later?
+
+オープン・クローズドの原則
+二つ目の原則は O 、バートランド・メイヤーが1988年に書いたオープンクローズドの原則です。
+
+    ソフトウェアの実存は拡張のために開かれ、修正のためには閉じられているべきだ。
+    バートランド・メイヤー オブジェクト指向ソフトウェアの構築
+
+このアドバイスは21年後に書かれた言語にもあてはまるでしょうか？
+
+```
+package main
+
+import "fmt"
+
+type A struct {
+	year int
+}
+
+func (a A) Greet() {
+    fmt.Println("Hello GolangUK", a.year)
+}
+
+type B struct {
+	A
+}
+
+func (b B) Greet() {
+    fmt.Println("Welcome to GolangUK", b.year)
+}
+
+func main() {
+	var a A
+	a.year = 2016
+	var b B
+	b.year = 2016
+	a.Greet() // Hello GolangUK 2016
+	b.Greet() // Welcome to GolangUK 2016
+}
+```
+
+We have a type A, with a field year and a method Greet. We have a second type, B which embeds an A, thus callers see B‘s methods overlaid on A‘s because A is embedded, as a field, within B, and B can provide its own Greet method, obscuring that of A.
