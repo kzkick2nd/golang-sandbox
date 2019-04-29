@@ -1,0 +1,23 @@
+
+; <<>> DiG 9.10.6 <<>> liful.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35390
+;; flags: qr rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;liful.com.			IN	A
+
+;; ANSWER SECTION:
+liful.com.		86318	IN	A	159.8.40.54
+
+;; Query time: 14 msec
+;; SERVER: 192.168.2.1#53(192.168.2.1)
+;; WHEN: Mon Apr 29 12:52:51 JST 2019
+;; MSG SIZE  rcvd: 54
+
+exit status 0
+wall clock time=28.156652ms system time=6.169ms user time=5.013ms
