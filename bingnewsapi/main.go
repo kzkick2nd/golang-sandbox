@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 // This struct formats the answer provided by the Bing News Search API.
@@ -91,6 +93,6 @@ func main() {
 
 	// Iterate over search results and print the result name and URL.
 	for _, result := range ans.Value {
-		fmt.Println(result.Name, result.URL)
+		spew.Dump(result.Name, result.URL)
 	}
 }
