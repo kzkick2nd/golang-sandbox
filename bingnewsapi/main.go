@@ -78,13 +78,13 @@ func main() {
 	defer resp.Body.Close()
 
 	// Read the results
-	resbody, err := ioutil.ReadAll(resp.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
 	}
 	// Create a new answer object
 	ans := new(NewsAnswer)
-	err = json.Unmarshal(resbody, &ans)
+	err = json.Unmarshal(body, &ans)
 	if err != nil {
 		fmt.Println(err)
 	}
