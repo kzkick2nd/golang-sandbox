@@ -45,7 +45,7 @@ type NewsAnswer struct {
 
 func main() {
 	// Verify the endpoint URI and replace the token string with a valid subscription key.
-	const endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/news/search"
+	const endpoint = "https://japaneast.api.cognitive.microsoft.com/bing/v7.0/news/search"
 	token := os.Getenv("AZURE_COGNITIVE_KEY")
 	searchTerm := "Microsoft Cognitive Services"
 
